@@ -25,3 +25,15 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+### Add Global CSS Variables
+
+For more information: https://medium.com/@ole.ersoy/using-global-css-variables-to-style-angular-components-a1913bea463d
+
+### Automated Deploy Scripts `npm install gh-pages --save-dev`
+
+For more information: https://stackoverflow.com/questions/42469817/host-github-pages-from-dist-folder-in-master-branch
+
+### Build with relative path
+
+For more information: https://stackoverflow.com/questions/44664188/how-to-deploy-an-angular-app-so-that-it-works-under-any-path
