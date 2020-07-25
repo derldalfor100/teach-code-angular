@@ -30,10 +30,14 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 For more information: https://medium.com/@ole.ersoy/using-global-css-variables-to-style-angular-components-a1913bea463d
 
-### Automated Deploy Scripts `npm install gh-pages --save-dev`
-
-For more information: https://stackoverflow.com/questions/42469817/host-github-pages-from-dist-folder-in-master-branch
-
 ### Build with relative path
 
 For more information: https://stackoverflow.com/questions/44664188/how-to-deploy-an-angular-app-so-that-it-works-under-any-path
+
+### Hash Router
+
+For more information: https://angular.io/guide/router
+
+### Automated Deploy Scripts `ng add angular-cli-ghpages`
+
+For more information: https://www.npmjs.com/package/angular-cli-ghpages#base-href
