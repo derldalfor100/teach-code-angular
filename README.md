@@ -41,3 +41,7 @@ For more information: https://angular.io/guide/router
 ### Automated Deploy Scripts `ng add angular-cli-ghpages`
 
 For more information: https://www.npmjs.com/package/angular-cli-ghpages#base-href
+
+### Bootstrap and Angular Material
+
+For more information: https://medium.com/@manivel45/configuring-angular-7-project-with-sass-bootstrap-and-angular-material-design-69b0f033dc04
