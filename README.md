@@ -49,3 +49,7 @@ For more information: https://medium.com/@manivel45/configuring-angular-7-projec
 ### Angular Material
 
 For more information: https://material.angular.io/guide/getting-started
+
+### Theming Angular with CSS Variables
+
+For more information: https://medium.com/@amcdnl/theming-angular-with-css-variables-3c78a5b20b24
