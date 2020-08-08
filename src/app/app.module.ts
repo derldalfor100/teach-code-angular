@@ -7,7 +7,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
-import { ThemeModule, lightTheme, darkTheme } from 'src/services/theme';
+import { MatButtonModule } from '@angular/material/button';
+import { ThemeModule } from 'src/services/theme';
+import { DEFAULT_THEME_NAME, THEMES_LIST } from 'src/services/constants/consts';
 
 @NgModule({
   declarations: [
@@ -20,9 +22,10 @@ import { ThemeModule, lightTheme, darkTheme } from 'src/services/theme';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    MatButtonModule,
     ThemeModule.forRoot({
-      themes: [lightTheme, darkTheme],
-      active: 'light'
+      themes: THEMES_LIST,
+      active: DEFAULT_THEME_NAME
     })
   ],
   providers: [],
