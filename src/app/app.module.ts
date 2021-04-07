@@ -10,12 +10,21 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatButtonModule } from '@angular/material/button';
 import { ThemeModule } from 'src/services/theme';
 import { DEFAULT_THEME_NAME, THEMES_LIST } from 'src/services/constants/consts';
+import { ShowComponent } from './show/show.component';
+import { EditComponent } from './edit/edit.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import {MatTableModule} from '@angular/material/table';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    ShowComponent,
+    EditComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +32,11 @@ import { DEFAULT_THEME_NAME, THEMES_LIST } from 'src/services/constants/consts';
     BrowserAnimationsModule,
     MatSliderModule,
     MatButtonModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatTableModule,
+    MatFormFieldModule,
+    MatInputModule,
     ThemeModule.forRoot({
       themes: THEMES_LIST,
       active: DEFAULT_THEME_NAME
