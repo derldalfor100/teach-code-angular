@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { ShowComponent } from './show/show.component';
 import { EditComponent } from './edit/edit.component';
+import { CreateUpdateComponent } from './create-update/create-update.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'edit',
     component: EditComponent
+  },
+  {
+    path: 'create-update',
+    component: CreateUpdateComponent
   },
   {
     path: '',

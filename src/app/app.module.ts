@@ -16,8 +16,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import { CountriesService } from 'src/services/countries/countries.service';
+import { CreateUpdateComponent } from './create-update/create-update.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,12 +29,14 @@ import { CountriesService } from 'src/services/countries/countries.service';
     AboutComponent,
     ShowComponent,
     EditComponent,
+    CreateUpdateComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     MatSliderModule,
     MatButtonModule,
     MatPaginatorModule,
@@ -39,6 +44,7 @@ import { CountriesService } from 'src/services/countries/countries.service';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCardModule,
     ThemeModule.forRoot({
       themes: THEMES_LIST,
       active: DEFAULT_THEME_NAME

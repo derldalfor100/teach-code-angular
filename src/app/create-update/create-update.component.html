@@ -1,0 +1,117 @@
+<mat-card class="form-card">
+    <form (ngSubmit)="onSubmit()" #countryForm="ngForm">
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="code">Code</mat-label>
+            <input matInput type="text" class="form-control" id="code"
+            required
+            [(ngModel)]="model.code" name="code"
+            #code="ngModel">
+            <mat-error [hidden]="code.valid || code.pristine"
+            class="alert alert-danger">
+                Code is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="name">Name</mat-label>
+            <input matInput type="text" class="form-control" id="name"
+            required
+            [(ngModel)]="model.name" name="name"
+            #name="ngModel">
+            <mat-error [hidden]="name.valid || name.pristine"
+            class="alert alert-danger">
+                Name is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="continent">Continent</mat-label>
+            <input matInput type="text" class="form-control" id="continent"
+            required
+            [(ngModel)]="model.continent" name="continent"
+            #continent="ngModel">
+            <mat-error [hidden]="continent.valid || continent.pristine"
+            class="alert alert-danger">
+                Continent is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="region">Region</mat-label>
+            <input matInput type="text" class="form-control" id="region"
+            required
+            [(ngModel)]="model.region" name="region"
+            #region="ngModel">
+            <mat-error [hidden]="region.valid || region.pristine"
+            class="alert alert-danger">
+                Region is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="surfaceArea">SurfaceArea</mat-label>
+            <input matInput type="number" class="form-control" id="surfaceArea"
+            required
+            [(ngModel)]="model.surfaceArea" name="surfaceArea"
+            #surfaceArea="ngModel">
+            <mat-error [hidden]="surfaceArea.valid || surfaceArea.pristine"
+            class="alert alert-danger">
+                SurfaceArea is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="population">Population</mat-label>
+            <input matInput type="number" class="form-control" id="population"
+            required
+            [(ngModel)]="model.population" name="population"
+            #population="ngModel">
+            <mat-error [hidden]="population.valid || population.pristine"
+            class="alert alert-danger">
+                Population is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="localName">LocalName</mat-label>
+            <input matInput type="text" class="form-control" id="localName"
+            required
+            [(ngModel)]="model.localName" name="localName"
+            #localName="ngModel">
+            <mat-error [hidden]="localName.valid || localName.pristine"
+            class="alert alert-danger">
+                LocalName is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="governmentForm">GovernmentForm</mat-label>
+            <input matInput type="text" class="form-control" id="governmentForm"
+            required
+            [(ngModel)]="model.governmentForm" name="governmentForm"
+            #governmentForm="ngModel">
+            <mat-error [hidden]="governmentForm.valid || governmentForm.pristine"
+            class="alert alert-danger">
+                GovernmentForm is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="code2">Code2</mat-label>
+            <input matInput type="text" class="form-control" id="code2"
+            required
+            [(ngModel)]="model.code2" name="code2"
+            #code2="ngModel">
+            <mat-error [hidden]="code2.valid || code2.pristine"
+            class="alert alert-danger">
+                Code2 is required
+            </mat-error>
+        </mat-form-field>
+
+        <br />
+    
+        <button mat-stroked-button class="mr-2" type="submit" [disabled]="!countryForm.form.valid">Submit</button>
+        <button mat-stroked-button color="warn" type="button" (click)="onReset()">Reset</button>
+    </form>
+</mat-card>
