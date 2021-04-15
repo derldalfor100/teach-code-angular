@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -17,6 +17,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { CountriesService } from 'src/services/countries/countries.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { MatInputModule } from '@angular/material/input';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSliderModule,
@@ -42,7 +44,9 @@ import { MatInputModule } from '@angular/material/input';
       active: DEFAULT_THEME_NAME
     })
   ],
-  providers: [],
+  providers: [
+    CountriesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
