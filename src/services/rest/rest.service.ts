@@ -22,7 +22,7 @@ export class RestService {
           resolve(data);
         },
         error => {
-          reject({ errorMessageFromRestApi: `Get Request Error. ${error.message || error}`});
+          reject({ errorMessageFromRestApi: `Get Request Error. ${error?.message}`});
         });
     });
   }
@@ -40,7 +40,7 @@ export class RestService {
           resolve(data);
         },
         error => {
-          reject({ errorMessageFromRestApi: `Post Request Error. ${error.message || error}`});
+          reject({ errorMessageFromRestApi: `Post Request Error. ${error?.message}`});
         });
     });
   }
@@ -58,7 +58,7 @@ export class RestService {
           resolve(data);
         },
         error => {
-          reject({ errorMessageFromRestApi: `Put Request Error. ${error.message || error}`});
+          reject({ errorMessageFromRestApi: `Put Request Error. ${error?.message}`});
         });
     });
   }
@@ -76,7 +76,7 @@ export class RestService {
           resolve(data);
         },
         error => {
-          reject({ errorMessageFromRestApi: `Delete Request Error. ${error.message || error}`});
+          reject({ errorMessageFromRestApi: `Delete Request Error. ${error?.message}`});
         });
     });
   }
