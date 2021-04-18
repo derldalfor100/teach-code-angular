@@ -39,7 +39,9 @@ export class CountriesService {
     return tableModels;
   }
 
-  async insert(body: Country): Promise<boolean> {
+  async insert(country: Country): Promise<boolean> {
+
+    const body = { country };
 
     const val = await this.connector.postRequestAsync(this.url + 'insert', null, null, body as any);
 
@@ -51,7 +53,9 @@ export class CountriesService {
     return true;
   }
 
-  async update(code: string, body: Country): Promise<boolean> {
+  async update(code: string, country: Country): Promise<boolean> {
+
+    const body = { country };
 
     const val = await this.connector.putRequestAsync(this.url + 'update/' + code, null, null, body as any);
 

@@ -72,8 +72,19 @@ export class ShowComponent implements OnInit {
     this.route.navigate([this.createUpdateLink]);
   }
 
-  onDelete(selectedCountry: CountryTable) {
+  async onDelete(selectedCountry: CountryTable, index: number) {
 
-    this.snackBar.open(`Country ${selectedCountry.name}, code: ${selectedCountry.code} has been deleted.`, 'hide', { duration: 2000 });
+    const isDeleted = await this.countries.delete(selectedCountry.code);
+
+    if(isDeleted) {
+
+      const newDataSource = [...this.dataSource.data];
+
+      newDataSource.splice(index, 1);
+
+      this.dataSource.data = newDataSource;
+
+      this.snackBar.open(`Country ${selectedCountry.name}, code: ${selectedCountry.code} has been deleted.`, 'hide', { duration: 2000 });
+    }
   }
 }

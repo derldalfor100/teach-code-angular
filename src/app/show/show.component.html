@@ -22,7 +22,7 @@
             </ng-container>
     
             <ng-container *ngIf="displayedColumnsNames[i] === 'Delete'">
-                <td mat-cell *matCellDef="let element"> <button class="m-2 p-1" (click)="onDelete(element)" mat-flat-button color="accent">{{element[displayedColumns[i]]}}</button> </td>
+                <td mat-cell *matCellDef="let element; let j = index;"> <button class="m-2 p-1" (click)="onDelete(element, j)" mat-flat-button color="accent">{{element[displayedColumns[i]]}}</button> </td>
             </ng-container>
           </ng-container>
       
