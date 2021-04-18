@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CreateUpdateCountry } from 'src/services/models/create-update-country';
 
 @Component({
@@ -8,13 +9,26 @@ import { CreateUpdateCountry } from 'src/services/models/create-update-country';
 })
 export class CreateUpdateComponent implements OnInit {
 
-  model = new CreateUpdateCountry();
+  model: CreateUpdateCountry = new CreateUpdateCountry();
+
+  defaultModel: CreateUpdateCountry = null;
 
   submitted = false;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+
+    const { queryParams } = this.route.snapshot;
+
+    if(queryParams && queryParams['code']) {
+
+      this.defaultModel = queryParams as CreateUpdateCountry;
+
+      this.model = {...this.defaultModel};
+    }
+
+    console.warn(this.route.snapshot.queryParams);
   }
 
   onSubmit() {
@@ -26,6 +40,6 @@ export class CreateUpdateComponent implements OnInit {
 
   onReset() {
 
-    this.model = new CreateUpdateCountry();
+    this.model = this.defaultModel === null ? new CreateUpdateCountry() : {...this.defaultModel};
   }
 }

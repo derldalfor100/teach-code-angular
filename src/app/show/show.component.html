@@ -1,4 +1,4 @@
-<button class="m-4 p-2" mat-flat-button color="primary">Add Record</button>
+<button class="m-4 p-2" (click)="onAddCountry()" mat-flat-button color="primary">Add Country</button>
 
 <br />
 
@@ -18,11 +18,11 @@
             </ng-container>
     
             <ng-container *ngIf="displayedColumnsNames[i] === 'Edit'">
-                <td mat-cell *matCellDef="let element"> <a class="m-2" mat-flat-button color="primary">{{element[displayedColumns[i]]}}</a> </td>
+                <td mat-cell *matCellDef="let element"> <a class="m-2" [routerLink]="[createUpdateLink]" [queryParams]="element" mat-flat-button color="primary">{{element[displayedColumns[i]]}}</a> </td>
             </ng-container>
     
             <ng-container *ngIf="displayedColumnsNames[i] === 'Delete'">
-                <td mat-cell *matCellDef="let element"> <button class="m-2 p-1" mat-flat-button color="accent">{{element[displayedColumns[i]]}}</button> </td>
+                <td mat-cell *matCellDef="let element"> <button class="m-2 p-1" (click)="onDelete(element)" mat-flat-button color="accent">{{element[displayedColumns[i]]}}</button> </td>
             </ng-container>
           </ng-container>
       
@@ -31,7 +31,7 @@
           </tr>
         </table>
       
-        <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+        <mat-paginator [pageSizeOptions]="pageSizes"></mat-paginator>
       </div>
 </div>
   

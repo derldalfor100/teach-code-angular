@@ -17,6 +17,7 @@ import {MatSortModule} from '@angular/material/sort';
 import {MatTableModule} from '@angular/material/table';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { MatInputModule } from '@angular/material/input';
 import { CountriesService } from 'src/services/countries/countries.service';
 import { CreateUpdateComponent } from './create-update/create-update.component';
@@ -45,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
+    MatSnackBarModule,
     ThemeModule.forRoot({
       themes: THEMES_LIST,
       active: DEFAULT_THEME_NAME

@@ -1,7 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { CountriesService } from 'src/services/countries/countries.service';
 import { CountryTable } from 'src/services/models/country';
 
@@ -12,13 +14,19 @@ import { CountryTable } from 'src/services/models/country';
 })
 export class ShowComponent implements OnInit {
   displayedColumnsNames: string[] = ['Code', 'Name', 'Continent', 'Region', 'SurfaceArea', 'IndepYear', 'Edit', 'Delete'];
+
   displayedColumns: string[] = ['code', 'name', 'continent', 'region', 'surfaceArea', 'indepYear', 'edit', 'delete'];
+
   dataSource: MatTableDataSource<CountryTable>;
+
+  pageSizes: number[] = [10, 25, 50, 100];
 
   @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  constructor(private countries: CountriesService) {
+  createUpdateLink = "/create-update";
+
+  constructor(private route: Router, private snackBar: MatSnackBar, private countries: CountriesService) {
   }
 
   ngOnInit() {
@@ -57,5 +65,15 @@ export class ShowComponent implements OnInit {
     if (this.dataSource.paginator) {
       this.dataSource.paginator.firstPage();
     }
+  }
+
+  onAddCountry() {
+
+    this.route.navigate([this.createUpdateLink]);
+  }
+
+  onDelete(selectedCountry: CountryTable) {
+
+    this.snackBar.open(`Country ${selectedCountry.name}, code: ${selectedCountry.code} has been deleted.`, 'hide', { duration: 2000 });
   }
 }
