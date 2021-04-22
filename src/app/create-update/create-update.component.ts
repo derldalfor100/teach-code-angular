@@ -10,6 +10,8 @@ import { CreateUpdateCountry } from 'src/services/models/create-update-country';
 })
 export class CreateUpdateComponent implements OnInit {
 
+  readonly continentNames = ['Asia','Europe','North America','Africa','Oceania','Antarctica','South America'];
+
   model: CreateUpdateCountry = new CreateUpdateCountry();
 
   defaultModel: CreateUpdateCountry = null;

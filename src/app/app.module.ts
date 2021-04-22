@@ -22,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
 import { CountriesService } from 'src/services/countries/countries.service';
 import { CreateUpdateComponent } from './create-update/create-update.component';
 import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { FormsModule } from '@angular/forms';
     MatTableModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatCardModule,
     MatSnackBarModule,
     ThemeModule.forRoot({

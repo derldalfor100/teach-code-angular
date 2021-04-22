@@ -6,3 +6,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .form-card {
     opacity: .65;
 }
+
+mat-select.form-control * {
+    color: black;
+}
+
+.form-control mat-option {
+    background-color: white !important;
+}
+
+.mat-primary .mat-option.mat-selected:not(.mat-option-disabled) {
+    color: yellowgreen;
+}
+
+.mat-form-field.mat-focused .mat-form-field-label {
+    color: yellowgreen;
+}
