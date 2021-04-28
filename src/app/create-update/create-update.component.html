@@ -66,14 +66,14 @@
 
         <mat-form-field class="mr-3 mb-5" appearance="fill">
             <mat-label for="population">Population</mat-label>
-            <input matInput type="number" class="form-control" id="population" min="1"
-            (change)="model.population < 1 ? model.population = 1 : model.population"
+            <input matInput type="number" class="form-control" id="population" min="1" pattern="\d*"
+            (change)="model.population < 1 || !population.valid ? model.population = 1 : model.population"
             required
             [(ngModel)]="model.population" name="population"
             #population="ngModel">
             <mat-error [hidden]="population.valid || population.pristine"
             class="alert alert-danger">
-                Population is required
+                Population is required and should be an integer
             </mat-error>
         </mat-form-field>
 
@@ -111,6 +111,53 @@
             class="alert alert-danger">
                 Code2 is required
             </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="indepYear">Indep Year</mat-label>
+            <input matInput type="number" class="form-control" id="indepYear" min="-5000"
+            (change)="model.indepYear < -5000 ? model.indepYear = 0 : model.indepYear"
+            [(ngModel)]="model.indepYear" name="indepYear"
+            #population="ngModel">
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="lifeExpectancy">Life Expectancy</mat-label>
+            <input matInput type="number" class="form-control" id="lifeExpectancy" min="0"
+            (change)="model.lifeExpectancy < 0 ? model.lifeExpectancy = 80 : model.lifeExpectancy"
+            [(ngModel)]="model.lifeExpectancy" name="lifeExpectancy"
+            #lifeExpectancy="ngModel">
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="gNP">GNP</mat-label>
+            <input matInput type="number" class="form-control" id="gNP" min="0"
+            (change)="model.gNP < 0 ? model.gNP = 0 : model.gNP"
+            [(ngModel)]="model.gNP" name="gNP"
+            #gNP="ngModel">
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="gNPOld">GNP Old</mat-label>
+            <input matInput type="number" class="form-control" id="gNPOld" min="0"
+            (change)="model.gNPOld < 0 ? model.gNPOld = 0 : model.gNPOld"
+            [(ngModel)]="model.gNPOld" name="gNPOld"
+            #gNPOld="ngModel">
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="headOfState">Head Of State</mat-label>
+            <input matInput type="text" class="form-control" id="headOfState" maxlength="60"
+            [(ngModel)]="model.headOfState" name="headOfState"
+            #headOfState="ngModel">
+        </mat-form-field>
+
+        <mat-form-field class="mr-3 mb-5" appearance="fill">
+            <mat-label for="capital">Capital</mat-label>
+            <input matInput type="number" class="form-control" id="capital" min="1" step="1" pattern="\d*"
+            (change)="model.capital < 1 || !capital.valid ? model.capital = 1 : model.capital"
+            [(ngModel)]="model.capital" name="capital"
+            #capital="ngModel">
         </mat-form-field>
 
         <br />
